@@ -4,10 +4,15 @@ body{
 }
 .deep-dive-container {
     margin: auto;
-    display: block;
+    display: inline-block;
     width: 600px; /* Set container width */
     height: 600px; /* Set container height */
     position: relative;
+}
+
+.image {
+    width: 1000px; /* Make the image fill the container's width */
+    height: 1000px;
 }
 
 .image-container {
@@ -103,18 +108,18 @@ body{
 
 /* Top-right bubble */
 .top {
-    top: 10px;
-    left: 50%;
+    top: 20%;
+    left: 65%;
 }
 
 /* Bottom-left bubble */
 .middle {
     top: 50%;
-    left: 10%;
+    left: 50%;
 }
 
 /* Bottom-right bubble */
 .bottom {
     top: 100%;
-    left: 10px;
+    left: 60%;
 }
