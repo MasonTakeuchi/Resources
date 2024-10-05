@@ -2,6 +2,27 @@ body{
     text-align: center;
     font-family: 'Arial';
 }
+
+.title {
+    width: 100%; /* Full width, adjust as needed */
+    height: 300px; /* Adjust the height of the title box */
+    background-image: url('https://img.freepik.com/premium-vector/watercolor-outer-space-purple-background_23-2149247753.jpg'); /* Background image */
+    background-size: cover; /* Ensures the image covers the entire box */
+    background-position: center; /* Centers the background image */
+    position: relative; /* Allows for text positioning */
+    display: flex; /* Flexbox to center the title */
+    justify-content: center; /* Centers the title horizontally */
+    align-items: center; /* Centers the title vertically */
+    color: white; /* Title text color */
+    font-family: 'Arial', sans-serif; /* Font styling */
+    font-size: 3em; /* Adjust the title size */
+}
+
+.sub-title {
+    font-size: 3em; /* Adjust the title size */
+    justify-content: left;
+}
+
 .deep-dive-container {
     margin: auto;
     display: inline-block;
@@ -106,20 +127,12 @@ body{
     visibility: visible; /* Make it visible */
 }
 
-/* Top-right bubble */
 .top {
-    top: 20%;
-    left: 65%;
+    
 }
 
-/* Bottom-left bubble */
 .middle {
-    top: 50%;
-    left: 50%;
 }
 
-/* Bottom-right bubble */
 .bottom {
-    top: 100%;
-    left: 60%;
 }
