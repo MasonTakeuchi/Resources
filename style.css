@@ -2,6 +2,14 @@ body{
     text-align: center;
     font-family: 'Arial';
 }
+.deep-dive-container {
+    margin: auto;
+    display: block;
+    width: 600px; /* Set container width */
+    height: 600px; /* Set container height */
+    position: relative;
+}
+
 .image-container {
     margin-top: 15px; /* Add margin to create buffer space above the image */
     margin-bottom: 15px;
@@ -11,16 +19,102 @@ body{
     position: relative;
 }
 
-/* Styling the image inside the container */
-.image-container img {
-    display: block;
-    width: 100%; /* Full width of the container */
-    height: 100%; /* Full height of the container */
-    transition: transform 0.5s ease, filter 0.5s ease; /* Smooth transition for hover effects */
+/* Styling the original image */
+.original-image {
+    display: block; /* Block display */
+    width: 100%; /* Full width of container */
+    height: 100%; /* Full height of container */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transition for original image */
 }
 
-/* Hover effect: Zoom and add a filter */
-.image-container:hover img {
-    transform: scale(1.1); /* Zoom in by 20% */
-    filter: brightness(96%) contrast(120%); /* Apply some visual effects */
+/* Styling the hover image */
+.hover-image {
+    display: block; /* Block display */
+    width: 20%; /* Full width of container */
+    height: 20%; /* Full height of container */
+    position: absolute; /* Position on top of original image */
+    top: 20%; /* Align to the top */
+    left: 50%; /* Align to the left */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease; /* Smooth transition for opacity */
+}
+
+/* Show the hover image and zoom the original on hover */
+.image-container:hover .original-image {
+    transform: scale(1.1); /* Zoom the original image */
+}
+
+.image-container:hover .hover-image {
+    opacity: 1; /* Show hover image */
+}
+
+
+/* Styling for each bubble */
+.bubble {
+    position: absolute; /* Allows the text box to be positioned relative to the bubble */
+    width: 50px;
+    height: 50px;
+    background-color: #007bff; /* Blue background */
+    border-radius: 50%; /* Makes the bubble round */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+.bubble:hover {
+    transform: scale(1.2); /* Make the bubble slightly larger on hover */
+}
+
+/* Number styling inside the bubble */
+.number {
+    font-weight: bold;
+    pointer-events: none; /* Ensures the number doesn't interfere with hover events */
+}
+
+/* Hidden text box */
+.text-box {
+    position: absolute;
+    top: 60px; /* Position the text box below the bubble */
+    left: 50%;
+    transform: translateX(-50%); /* Center the text box horizontally */
+    width: 200px;
+    padding: 10px;
+    background-color: #f8f9fa; /* Light background for text box */
+    color: #333;
+    border: 1px solid #007bff; /* Border matching the bubble color */
+    border-radius: 5px;
+    opacity: 0; /* Initially hidden */
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+    font-size: 14px;
+    text-align: center;
+    z-index: 1; /* Ensure text box appears above other elements */
+}
+
+/* Show the text box on hover */
+.bubble:hover .text-box {
+    opacity: 1; /* Show the text box */
+    visibility: visible; /* Make it visible */
+}
+
+/* Top-right bubble */
+.top {
+    top: 10px;
+    left: 50%;
+}
+
+/* Bottom-left bubble */
+.middle {
+    top: 50%;
+    left: 10%;
+}
+
+/* Bottom-right bubble */
+.bottom {
+    top: 100%;
+    left: 10px;
 }
