@@ -6,13 +6,47 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Project: The Design is Very Human</h1>
-        <p>Working to create efficient, easy-to install anti-theft hardware.</p>
+        <section>
+            <section class="aboutus-title">
+                <h1>Introducing: the Fridge Defense System (FDS)</h1>
+            </section>
+            <section class="fade-in-section">
+                <h2>Working to create efficient, easy-to install anti-theft hardware.</h2>
+            </section>
+        </section>
+        
+        
         <a href="indepth.html" class="image-container">
             <img src="https://m.media-amazon.com/images/I/51Ej284t8CL.jpg" class="original-image"/>
-            <img src="https://pngimg.com/d/crossbow_PNG37.png" class="hover-image">
         </a>
 
-        <div><a href="aboutus.html" class="bottom-link">About Us</a></div>
+        <div>
+            <a href="index.html" class="bottom-link">Homepage</a>
+            <a href="aboutus.html" class="bottom-link">About Us</a>
+        </div>
     </body>
 </html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const sections = document.querySelectorAll('.fade-in-section');
+
+        const options = {
+            root: null,
+            threshold: 0.5,
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+</script>
