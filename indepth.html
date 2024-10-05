@@ -9,9 +9,15 @@
         <div class="title">
             <h1>A Deep Dive</h1>
         </div>
-        <p class="sub-title">Sleek.</p>
-        <p class="sub-title">Elegant.</p>
+        <section class="fade-in-section" id="about-us">
+            <p class="sub-title">Sleek.</p>
+        </section>
+        <section class="fade-in-section" id="about-us">
+            <p class="sub-title">Elegant.</p>
+        </section>
+        <section class="fade-in-section" id="about-us">
         <p class="sub-title">Grand.</p>
+        </section>
 
         <div class="in-depth-container">
                 <img src="https://m.media-amazon.com/images/I/51Ej284t8CL.jpg" class = "image"/>
@@ -32,7 +38,29 @@
                 <div class="text-box">This is the content for bubble 3. It expands on hover.</div>
             </div>
         </div>
-        <h2>About Us:</h2>
-        <p>The Team</p>
     </body>
 </html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const sections = document.querySelectorAll('.fade-in-section');
+
+        const options = {
+            root: null,
+            threshold: 0.5,
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+</script>

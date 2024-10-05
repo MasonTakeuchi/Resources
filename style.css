@@ -5,7 +5,7 @@ body{
 
 .title {
     width: 100%; /* Full width, adjust as needed */
-    height: 300px; /* Adjust the height of the title box */
+    height: 800px; /* Adjust the height of the title box */
     background-image: url('https://img.freepik.com/premium-vector/watercolor-outer-space-purple-background_23-2149247753.jpg'); /* Background image */
     background-size: cover; /* Ensures the image covers the entire box */
     background-position: center; /* Centers the background image */
@@ -15,13 +15,18 @@ body{
     align-items: center; /* Centers the title vertically */
     color: white; /* Title text color */
     font-family: 'Arial', sans-serif; /* Font styling */
-    font-size: 3em; /* Adjust the title size */
+    font-size: 5em; /* Adjust the title size */
 }
 
 .sub-title {
-    font-size: 3em; /* Adjust the title size */
-    justify-content: left;
+    font-size: 4.5em; /* Adjust the title size */
+    position: relative; /* Allows for text positioning */
+    justify-content: center;
+    margin-top:200px;
+    margin-bottom:200px;
 }
+
+
 
 .deep-dive-container {
     margin: auto;
@@ -127,12 +132,72 @@ body{
     visibility: visible; /* Make it visible */
 }
 
+.bottom-link{
+    position:relative;
+    margin-top: 200px;
+}
+
 .top {
-    
+    top:340%;
+    right:32%;
 }
 
 .middle {
+    top:380%;
+    right:50%;
 }
 
 .bottom {
+    top:420%;
+    left:50%;
+}
+
+#about-us {
+    margin-top: 50px;
+    background-color: #00000000;
+    border: 1px solid #dddddd00;
+    border-radius: 10px;
+}
+
+h2 {
+    font-size: 30px;
+    margin-bottom: 50px;
+    color: #000000;
+}
+
+h3 {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: #3b3737;
+}
+p {
+    line-height: 1.9; /* Adjust this value as needed */
+}
+
+.fade-in-section {
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Slightly move down */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Animation */
+}
+
+.fade-in-section.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
+}
+
+.fade-in-text-section {
+    position: relative;
+    top: 60px; /* Position the text box below the bubble */
+    left: 50%;
+    transform: translateX(-50%); /* Center the text box horizontally */
+    width: 800px;
+    padding: 10px;
+    background-color: #f8f9fa; /* Light background for text box */
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    z-index: 1; /* Ensure text box appears above other 
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Slightly move down */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Animation */
 }

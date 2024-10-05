@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="title">
+            <h1>About Us</h1>
+        </div>
+        <div class="fade-in-text-section">
+            Welcome to the 27" Samsung Essential Curved Monitor, where we believe that food safety and freshness should never be compromised. Our mission is to provide innovative solutions that protect your perishable items and ensure peace of mind for households and businesses alike.
+        </div>
+
+        <section class="fade-in-section" id="who-we-are">
+            <h3>Who We Are</h3>
+            <p>We are a passionate team of engineers, designers, and food safety enthusiasts dedicated to revolutionizing the way we store and manage our food. With experience in technology and a commitment to sustainability, we have developed a state-of-the-art fridge defense system that not only safeguards your food but also educates users on best practices for food preservation.</p>
+        </section>
+        <section class="fade-in-section" id="our-vision">
+            <h3>Our Vision</h3>
+            <p>At the 27" Samsung Essential Curved Monitor, our vision is to create a world where everyone can enjoy fresh, safe food without the fear of spoilage. We aim to empower consumers with the tools and knowledge needed to extend the life of their groceries, reduce waste, and make healthier choices.</p>
+        </section>
+        <section class="fade-in-section" id="what-we-offer">
+            <h3>What We Offer</h3>
+            <p>Our flagship product utilizes advanced sensors and smart technology to monitor your fridge’ss conditions in real-time. With features such as temperature alerts, humidity control, and a user-friendly app interface, you can easily track the freshness of your food from anywhere. We are committed to continuous innovation, ensuring that our customers receive the best possible solutions for their food storage needs.</p>
+        </section>
+        <section class="fade-in-section" id="join-us">
+            <h3>Join Us on Our Journey</h3>
+            <p>We invite you to explore our website and learn about our products and tips for effective food management. Together, we can create a safer, more sustainable future—one fridge at a time.</p>
+    
+            <p>Thank you for being part of our community!</p>
+        </section>
+    </body>
+</html>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const sections = document.querySelectorAll('.fade-in-section');
+
+    const options = {
+        root: null,
+        threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, options);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+});
+</script>
